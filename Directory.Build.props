@@ -1,18 +1,19 @@
 <Project>
   <PropertyGroup>
-    <TargetFrameworkName>net7.0</TargetFrameworkName>
-    <AspNetVersion>7.0.*</AspNetVersion>
-    <EFCoreVersion>7.0.*</EFCoreVersion>
-    <EFCorePostgresVersion>7.0.*</EFCorePostgresVersion>
-    <MicrosoftCodeAnalysisVersion>4.5.*</MicrosoftCodeAnalysisVersion>
+    <TargetFrameworkName>net8.0</TargetFrameworkName>
+    <AspNetVersion>8.0.0-preview*</AspNetVersion>
+    <EFCoreVersion>8.0.0-preview.3*</EFCoreVersion>
+    <EFCorePostgresVersion>8.0.0-preview.3*</EFCorePostgresVersion>
+    <MicrosoftCodeAnalysisVersion>4.6.*</MicrosoftCodeAnalysisVersion>
     <HumanizerVersion>2.14.1</HumanizerVersion>
-    <JsonApiDotNetCoreVersionPrefix>5.2.0</JsonApiDotNetCoreVersionPrefix>
+    <JsonApiDotNetCoreVersionPrefix>5.2.0-pre</JsonApiDotNetCoreVersionPrefix>
     <CodeAnalysisRuleSet>$(MSBuildThisFileDirectory)CodingGuidelines.ruleset</CodeAnalysisRuleSet>
     <WarningLevel>9999</WarningLevel>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
     <IsPackable>false</IsPackable>
     <WarnOnPackingNonPackableProject>false</WarnOnPackingNonPackableProject>
+    <SuppressNETCoreSdkPreviewMessage>true</SuppressNETCoreSdkPreviewMessage>
   </PropertyGroup>
 
   <ItemGroup>
@@ -35,6 +36,6 @@
   <PropertyGroup>
     <CoverletVersion>3.2.*</CoverletVersion>
     <MoqVersion>4.18.*</MoqVersion>
-    <TestSdkVersion>17.5.*</TestSdkVersion>
+    <TestSdkVersion>17.6.*</TestSdkVersion>
   </PropertyGroup>
 </Project>
