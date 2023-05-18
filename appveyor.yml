@@ -95,6 +95,17 @@ for:
 
 build_script:
 - pwsh: |
+    Write-Output "Install .NET 8 Preview"
+    # https://learn.microsoft.com/en-us/dotnet/core/tools/dotnet-install-script
+    # https://help.appveyor.com/discussions/questions/40585-supporting-net-core-30-previews
+    # https://help.appveyor.com/discussions/problems/28035-unable-to-install-specific-version-of-net-core-on-ubuntu-images
+    if ($IsWindows) {
+      pwsh -NoProfile -ExecutionPolicy unrestricted -Command "[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12; &([scriptblock]::Create((Invoke-WebRequest -UseBasicParsing 'https://dot.net/v1/dotnet-install.ps1'))) -Version 8.0.100-preview.4.23260.5 -InstallDir 'C:\Program Files\dotnet'"
+    }
+    else {
+      sudo curl -sSL https://dot.net/v1/dotnet-install.sh | sudo bash /dev/stdin --version 8.0.100-preview.4.23260.5 --install-dir /usr/share/dotnet
+    }
+
     Write-Output ".NET version:"
     dotnet --version
 
